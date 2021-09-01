@@ -1,0 +1,11 @@
+@mixin headingStyle {
+    color:#8b6220;
+    text-align: center;
+    font-family: 'Rampart One', cursive;
+    clear: both;
+    margin: $rem-size+1 auto;
+}
+@mixin TextShadow {
+    color: rgb(46, 46, 46);
+    text-shadow: 2px 2px 4px #768435;
+}

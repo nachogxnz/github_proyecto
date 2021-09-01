@@ -1,0 +1,120 @@
+.header {
+    height: 16vh;
+    min-height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $color-primary;
+    background-color: #ffffff;
+}
+.div {
+    &__logo {
+        max-width: 140px;
+        margin-left: $rem-size;
+        margin-right: $rem-size;
+    }
+}
+.menu {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    &__item {
+        margin: 1.5rem;
+        font-size: 1.5rem;
+        transition: all ease 1s;
+    }
+    &__item:hover {
+        transform: rotate(20deg);
+    }
+    &__item__enlace {
+        padding: 1rem;
+        text-decoration: none;
+        color: #768435;
+        font-family: $main-font;
+    }
+    &__item__enlace:hover {
+        background-color: #768435;
+        color: white;
+    }
+}
+.footer {
+    background-color: #768435;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 15vh;
+    &__enlaces {
+        display: flex;
+        justify-content: left;
+        margin: $rem-size/2;
+    }
+    &__copyright {
+        margin-right:$rem-size/2;
+        color: #595959;
+        font-size: $rem-size;
+    }
+}
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+    .header {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+    .menu {
+        display: block;
+        &__item {
+            margin: 0rem;
+            &__enlace {
+                font-size: $rem-size/2;
+                margin: $rem-size/3;
+            }
+        }
+    }
+    .footer {
+        flex-direction: column;
+        height: auto;
+        &__enlaces {
+            justify-content: center;
+            &__img {
+                width: 70%;
+                height: 70%;
+            }
+        }
+        &__copyright {
+            margin: auto;
+            text-align: center;
+            font-size: 1rem;
+        }
+    }
+}
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+    .div {
+        &__logo {
+            width: 100px;
+            margin-left: $rem-size/2;
+            margin-right: $rem-size/2;
+        }
+    }
+    .menu {
+        &__item {
+            margin: 0rem;
+            &__enlace {
+                font-size: $rem-size/3;
+                margin: $rem-size/3;
+                padding: 5px;
+            }
+        }
+    }
+    .footer {
+        &__enlaces {
+            &__img {
+                width: 70%;
+                height: 70%;
+            }
+        }
+        &__copyright {
+            font-size: $rem-size/2;
+        }
+    }
+}

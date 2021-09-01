@@ -1,0 +1,474 @@
+/*IMPORTS*/
+@import "./variables";
+@import "./normalize";
+@import "./globales";
+@import "./mixins";
+@import "./utilities";
+/* HOME */
+#home {
+    display: grid;
+    grid-template-rows: 25vh 1fr 1fr;
+    grid-template-areas:
+    "ceroSeccion" 
+    "primeraSección"
+    "segundaSección";
+    background: $main-gradient;
+}
+.mainzero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    grid-area: ceroSeccion;
+    height: 25vh;
+    background-color: $color-primary;
+    margin-top: $rem-size+2;
+    margin-bottom: $rem-size+2;
+    &__titles {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        &__one {
+            font-size: $rem-size*1.5;
+            font-family: $main-font;
+            color: white;
+        }
+        &__two {
+            font: $rem-size+2;
+            font-family: $main-font;
+            color: white;
+        }
+    }
+    &__img {
+        height: 25vh;
+        width: 25%;
+    }
+}
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-area: primeraSección;
+    &__heading {
+        @include headingStyle;
+        font-size: $rem-size*2;
+    }
+    &__first {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        &__img {
+            height: 15rem;
+            margin: $rem-size*2;
+            justify-content: space-around;
+        }
+        &__parrafo {
+            text-align: center;
+            width: 25vw;
+            font-family: $main-font;
+            @include TextShadow;
+        }
+    }
+}
+.maindos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: segundaSección;
+    padding: $rem-size+1;
+    margin-top: $rem-size*2;
+    &__parrafo{
+        text-align: center;
+        width: 25vw;
+        font-family: $main-font;
+        @include TextShadow;
+    }
+    &__img {
+        height: $rem-size*10;
+        margin: $rem-size*2;
+        width: $rem-size*10+10;
+    }
+}
+/*NOSOTROS*/
+.nosotros {
+    display: grid;
+    justify-items: center;
+    background: $main-gradient;
+    &__img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &__telas {
+            height: 40vh;
+            border: $rem-size/2;
+            margin-right: $rem-size;
+            box-shadow: 10px 10px 8px #434b1e;
+        }
+        &__p {
+            width: 30%;
+            text-align: center;
+            font-family: $main-font;
+            @include TextShadow;
+        }
+    }
+    &__titulo {
+        @include headingStyle;
+        font-size: $rem-size*2;
+    }
+    &__lista {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: $rem-size;
+        list-style-type: none;
+        margin: $rem-size;
+        font-size: $rem-size;
+        &__item {
+            margin: $rem-size;
+            font-family: $main-font;    
+            @include TextShadow;
+        }
+    }
+    &__tresImagenes {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    &__tresImagenes img {
+        width: 27vw;
+        height: 30vh;
+        margin: $rem-size/2;
+        box-shadow: 10px 10px 8px #434b1e;
+    }
+    &__hdos {
+        @include headingStyle;
+        font-size: $rem-size*2;  
+    }
+}
+/* GALERÍA */
+#galería {
+    background-image:$main-gradient;
+    height: 80vh;
+}
+.busca{
+    &__titulo {
+        @include headingStyle;
+        font-size: $rem-size+1;  
+    }
+}
+/*MACREANDO*/
+.macreando {
+    display: grid;
+    grid-template-rows: 1fr 3fr 1fr 3fr;
+    background-image: $main-gradient;
+    &__video {
+        display: block;
+        margin: auto;
+        box-shadow: 10px 10px 8px #434b1e;
+    }
+    &__title {
+        @include headingStyle;
+        font-size: $rem-size*2;  
+    }
+    &__titletwo {
+        @include headingStyle;
+        font-size: $rem-size*2;  
+    }
+    &__videotwo {
+        display: block;
+        margin: auto;
+        }
+}
+
+/*PIEDRAS*/
+.energías {
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+    background-image: $main-gradient;
+    font-family: $main-font;
+    &__title {
+        @include headingStyle;
+        font-size: $rem-size*2;  
+    }
+}
+.table {
+    border: 3px solid;
+    margin: auto;
+    margin-bottom: $rem-size*2;
+    box-shadow: 10px 10px 8px #434b1e;
+}
+.tr {
+    background-color: #F3F0D7;
+    font-weight: 700;
+    font-size: $rem-size*0.5;
+    &__th {
+        background-color: #C1AC95;
+        border: 2px;
+        color:#5c5c5c;
+        font-size: $rem-size;
+    }
+    &__td {
+        background-color: #F3F0D7;
+        font-weight: 700;
+        font-size: $rem-size*0.5;
+        padding: 1rem;
+        &__ul {
+            list-style-type: square;
+            list-style-position: inside;
+            padding: 1rem;
+        }
+    }
+}
+/*CONTACTO*/
+.contacto {
+    display: grid;
+    grid-template-rows: 1fr 5fr;
+    background-image: $main-gradient;
+    font-family: $main-font;
+    &__title {
+        @include headingStyle;
+        font-size: $rem-size*2;  
+    }
+}
+.form {
+    margin: $rem-size+1 auto;
+    font-weight: bold;
+    &__label {
+        margin-bottom: 1rem;
+        @include TextShadow;
+    }
+    &__input {
+        margin-bottom: 1rem;
+        box-shadow: 10px 10px 8px #434b1e;
+    }
+    &__select {
+        margin-bottom: 1rem;
+        box-shadow: 10px 10px 8px #434b1e;
+    }
+    &__p {
+        @include TextShadow;
+    }
+}
+/*ERROR*/
+.error {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: $rem-size;
+    &__title {
+        @include headingStyle;
+        font-size: $rem-size*2;
+    }
+    &__img {
+        width: 100vw;
+        height: 70vh;
+    }
+}
+.list {
+    list-style-type: none;
+    &__button {
+        font-size: $rem-size;
+        border: $color-primary 2px;
+        margin-bottom: $rem-size/2;
+    }
+    &__enlace {
+        text-decoration: none;
+        background-color: $color-primary;
+        color: white;
+        padding: 1rem;
+    }
+    &__enlace:hover {
+        background-color: white;
+        border: 2px solid $color-primary;
+        color: $color-primary;
+    }
+}
+/*MEDIA QUERIES CELULAR */
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+    /*HOME*/
+    .main {
+        &__first {
+            flex-direction: column;
+            &__img {
+                height: 22vh;
+                width: 22vh;
+                margin: auto;
+                justify-content: center;
+            }
+            &__parrafo {
+                width: 80vw;
+                font-size: $rem-size/2;
+            }
+        }
+    }
+    .maindos {
+        flex-direction: column;
+        &__img {
+            height: 25vh;
+            width: 25vh;
+            margin: auto;
+            justify-content: center;
+        }
+        &__parrafo {
+            width: 80vw;
+            font-size: $rem-size/2;
+        }
+    }
+    /*NOSOTROS*/
+    .nosotros {
+        &__hdos {
+            font-size: 2rem;
+        }
+        &__titulo {
+            font-size: 2rem;
+        }
+        &__img {
+            flex-direction: column;
+            &__telas {
+                margin:auto;
+                width: 80%;
+                height: 80%;
+                margin-bottom: $rem-size;
+            }
+            &__p {
+                width: 80vw;
+                font-size: 1rem;
+            }
+        }
+        &__lista {
+            display: block;
+            list-style-type: disc;
+            &__item {
+                font-size: 1rem;
+            }
+        }
+        &__tresImagenes {
+            flex-direction: column;
+        }
+        &__tresImagenes img {
+            width: 80%;
+            height: 80%;
+        }
+    }
+    /*GALERÍA*/
+    .carouselExampleIndicators {
+        width: 100%;
+        height: 100%;
+    }
+    /*MACREANDO*/
+    .macreando {
+        grid-template-rows: 1fr 2fr 1fr 2fr;
+        &__video {
+            width: 100vw;
+            height: 30vh;
+        }
+        &__title {
+            font-size: 2rem;
+        }
+        &__titletwo {
+            font-size: 2rem;
+        }
+        &__videotwo {
+            width: 100vw;
+            height: 30vh;
+            margin: auto;
+        }
+    }
+    .video__div {
+        height: auto;
+    }
+    /*PIEDRAS*/
+    .energías {
+        grid-template-rows: 1fr 1fr;
+        &__title {
+            font-size: 2rem;
+        }
+    }
+    .table {
+        border: 1px solid;
+        margin: auto;
+        margin-bottom: $rem-size;
+        width: 100vw;
+    }
+    .tr {
+        font-size: 10px;
+        &__td {
+            font-size: 10px;
+            padding: 5px;
+            &__ul {
+                font-size: 10px;
+                padding: 1px;
+            }
+        }
+        &__th {
+            border: 1px;
+            font-size: 10px;
+        }
+    }
+}
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+    /*HOME*/
+    .main {
+        &__img {
+            height: 25vh;
+            width: 25vw;
+        }
+        &__parrafo {
+            font-size: $rem-size/2;
+        }
+    }
+    .maindos {
+        &__parrafo{
+            font-size: $rem-size/2;
+        }
+        &__img {
+            height: 25vh;
+            width: 25vw;
+        }
+    }
+    /*NOSOTROS*/
+    .nosotros {
+        &__hdos {
+            font-size: 2rem;
+        }
+        &__titulo {
+            font-size: 2rem;
+        }
+        &__img {
+            flex-direction: column;
+            &__telas {
+                margin:auto;
+                width: 80%;
+                height: 80%;
+                margin-bottom: $rem-size;
+            }
+            &__p {
+                width: 80vw;
+                font-size: 1rem;
+            }
+        }
+        &__lista {
+            display: block;
+            list-style-type: disc;
+            &__item {
+                font-size: 1rem;
+            }
+        }
+        &__tresImagenes {
+            flex-direction: column;
+        }
+        &__tresImagenes img {
+            width: 80%;
+            height: 80%;
+        }
+    }
+    /*PIEDRAS*/
+    .energías {
+        &__title {
+            font-size: 3rem;
+        }
+    }
+}
+
